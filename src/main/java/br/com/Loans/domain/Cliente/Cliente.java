@@ -1,4 +1,10 @@
-package br.com.Loans.domain;
+package br.com.Loans.domain.Cliente;
+
+import br.com.Loans.domain.Loan.DadosListLoans;
+import br.com.Loans.domain.Loan.LoansType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cliente {
 
@@ -9,7 +15,7 @@ public class Cliente {
     private String localizacao;
     private LoansType loansType;
     private int taxaDeJuros;
-
+    private List<DadosListLoans> dadosListLoans = new ArrayList<>();
 
     public Cliente() {
     }
@@ -20,6 +26,17 @@ public class Cliente {
         this.nome = dados.nome();
         this.renda = dados.renda();
         this.localizacao = dados.localizacao();
+    }
+
+    public void dadosListLoans (DadosVerificacaoCliente dadosVerificacaoCliente) {
+        this.loansType = dadosVerificacaoCliente.loansType();
+        this.taxaDeJuros = dadosVerificacaoCliente.taxaDeJuros();
+        dadosListLoans.add(new DadosListLoans(loansType, taxaDeJuros));
+
+//        for (DadosListLoans dadosListLoans1 : dadosListLoans){
+//            System.out.println("lista: "+ dadosListLoans1);
+//        }
+
     }
 
     public void verificaRenda(DadosVerificacaoCliente dados) {
@@ -67,6 +84,10 @@ public class Cliente {
 
     public int getTaxaDeJuros() {
         return taxaDeJuros;
+    }
+
+    public List<DadosListLoans> getDadosListLoans() {
+        return dadosListLoans;
     }
 
     @Override

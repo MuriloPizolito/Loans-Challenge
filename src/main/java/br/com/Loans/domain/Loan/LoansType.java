@@ -1,4 +1,4 @@
-package br.com.Loans.domain;
+package br.com.Loans.domain.Loan;
 
 public enum LoansType {
 
