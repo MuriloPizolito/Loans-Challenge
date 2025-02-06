@@ -18,19 +18,16 @@ public class LoansController {
 
     @PostMapping
     public ResponseEntity loanValidation(@RequestBody @Valid DadosCadastroCliente dados) {
-//        System.out.println(dados);
-
         Cliente cliente = new Cliente(dados);
 
         DadosVerificacaoCliente dadosVerificacaoCliente = new DadosVerificacaoCliente(cliente);
-        DadosListLoans dadosListLoans = new DadosListLoans(dadosVerificacaoCliente);
-        DadosRespostaAPi dadosRespostaAPi = new DadosRespostaAPi(cliente);
         cliente.dadosListLoans(dadosVerificacaoCliente);
+        DadosRespostaAPi dadosRespostaAPi = new DadosRespostaAPi(cliente);
 
         System.out.println(dadosRespostaAPi);
         System.out.println(dadosVerificacaoCliente);
 
-        return ResponseEntity.ok(dadosRespostaAPi); // tenho que devolver a lista com os tipos de emprestimos
+        return ResponseEntity.ok(dadosRespostaAPi);
     }
 
 

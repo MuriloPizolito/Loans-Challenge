@@ -28,35 +28,24 @@ public class Cliente {
         this.localizacao = dados.localizacao();
     }
 
-    public void dadosListLoans (DadosVerificacaoCliente dadosVerificacaoCliente) {
-        this.loansType = dadosVerificacaoCliente.loansType();
-        this.taxaDeJuros = dadosVerificacaoCliente.taxaDeJuros();
-        dadosListLoans.add(new DadosListLoans(loansType, taxaDeJuros));
-
-//        for (DadosListLoans dadosListLoans1 : dadosListLoans){
-//            System.out.println("lista: "+ dadosListLoans1);
-//        }
-
-    }
-
-    public void verificaRenda(DadosVerificacaoCliente dados) {
-
-        if (dados.renda() <= 3000) {
-            System.out.println("Empréstimo pessoal");
-            System.out.println("Empréstimo com garantia");
+    public void dadosListLoans(DadosVerificacaoCliente dadosVerificacaoCliente) {
+        if (renda < 3000) {
+            dadosListLoans.add(new DadosListLoans(LoansType.PESSOAL, 4));
+            dadosListLoans.add(new DadosListLoans(LoansType.GARANTIA, 3));
         }
-        if (dados.renda() >= 3000 && dados.renda() <= 5000) {
-            if (dados.idade() < 30 && dados.localizacao().equals("SP")) {
-                System.out.println("Empréstimo pessoal");
-                System.out.println("Empréstimo com garantia");
+
+        if (renda >= 3000 && renda <= 5000) {
+            if (idade < 30 && localizacao.equalsIgnoreCase("SP")) {
+                dadosListLoans.add(new DadosListLoans(LoansType.PESSOAL, 4));
+                dadosListLoans.add(new DadosListLoans(LoansType.GARANTIA, 3));
             }
         }
 
-        if (dados.renda() >= 5000) {
-            System.out.println("Empréstimo consignado");
+        if (renda >= 5000) {
+            dadosListLoans.add(new DadosListLoans(LoansType.CONSIGNADO, 2));
         }
-    }
 
+    }
 
     public int getIdade() {
         return idade;

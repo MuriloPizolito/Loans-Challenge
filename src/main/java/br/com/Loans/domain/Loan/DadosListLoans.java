@@ -8,6 +8,4 @@ public record DadosListLoans(LoansType loansType, int taxaDeJuros) {
     public DadosListLoans(DadosVerificacaoCliente dados) {
         this(dados.loansType(), dados.taxaDeJuros());
     }
-
-
 }
