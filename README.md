@@ -40,15 +40,15 @@ HTTP/1.1 200 OK
   "nome": "Vuxaywua Zukiagou",
   "dadosListLoans": [
     {
-      "loansType": "PERSONAL",
+      "loansType": "PESSOAL",
       "taxaDeJuros": 4
     },
     {
-      "type": "GUARANTEED",
+      "type": "GARANTIA",
       "interest_rate": 3
     },
     {
-      "type": "CONSIGNMENT",
+      "type": "CONSIGNADO",
       "interest_rate": 2
     }
   ]

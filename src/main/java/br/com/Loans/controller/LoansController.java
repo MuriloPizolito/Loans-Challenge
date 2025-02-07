@@ -3,7 +3,6 @@ package br.com.Loans.controller;
 import br.com.Loans.domain.Cliente.Cliente;
 import br.com.Loans.domain.Cliente.DadosCadastroCliente;
 import br.com.Loans.domain.Cliente.DadosVerificacaoCliente;
-import br.com.Loans.domain.Loan.DadosListLoans;
 import br.com.Loans.domain.Loan.DadosRespostaAPi;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -22,14 +21,9 @@ public class LoansController {
 
         DadosVerificacaoCliente dadosVerificacaoCliente = new DadosVerificacaoCliente(cliente);
         cliente.dadosListLoans(dadosVerificacaoCliente);
-        DadosRespostaAPi dadosRespostaAPi = new DadosRespostaAPi(cliente);
 
-        System.out.println(dadosRespostaAPi);
-        System.out.println(dadosVerificacaoCliente);
-
-        return ResponseEntity.ok(dadosRespostaAPi);
+        return ResponseEntity.ok(new DadosRespostaAPi(cliente));
     }
-
 
 
 }
