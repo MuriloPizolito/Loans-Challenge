@@ -3,7 +3,8 @@
 <h4> O avaliador de empréstimos é uma API REST desenvolvida em Java com Spring Boot. 
 O projeto tem como objetivo criar um sistema para análise e recomendação de modalidades de empréstimo,  
 implementando as operações básicas de consulta, com base em critérios como idade, salário e localização do cliente.  
-A API processa essas informações e retorna ao cliente as opções de empréstimos disponíveis. </h4>
+A API processa essas informações e retorna ao cliente as opções de empréstimos disponíveis. 
+O projeto possui uma documentação interativa com o Swagger para facilitar a integração.</h4>
 
 
 ### 🔗 Regras de Negócio
@@ -25,9 +26,34 @@ A API analisa a elegibilidade para os seguintes tipos de empréstimos, considera
 - **Maven** - Para gerenciamento de dependências e automação de build.
 - **Swagger:** Ferramenta usada para explorar todos os endpoints da API, e disponibilizar uma documentação interativa e acessível da API REST.
 
-## Endpoints
-- **POST/customer-loans**
+## Endpoint
 -  Recebe as informações do cliente e retorna os empréstimos disponíveis.
+- ![Imagem autenticação ](./assets/endpoint.png)
+
+
+### 📋 Exemplo de Resposta da API
+Quando um cliente envia suas informações, o serviço retorna o nome do cliente e a lista de empréstimos disponíveis, com os respectivos tipos e taxas de juros.
+
+```json
+HTTP/1.1 200 OK
+{
+  "nome": "Vuxaywua Zukiagou",
+  "dadosListLoans": [
+    {
+      "loansType": "PERSONAL",
+      "taxaDeJuros": 4
+    },
+    {
+      "type": "GUARANTEED",
+      "interest_rate": 3
+    },
+    {
+      "type": "CONSIGNMENT",
+      "interest_rate": 2
+    }
+  ]
+}
+```
 
 
 ## Contato
