@@ -38,18 +38,18 @@ Quando um cliente envia suas informações, o serviço retorna o nome do cliente
 HTTP/1.1 200 OK
 {
   "nome": "Vuxaywua Zukiagou",
-  "dadosListLoans": [
+  "listaEmprestimos": [
     {
-      "loansType": "PESSOAL",
+      "tipoEmprestimo": "PESSOAL",
       "taxaDeJuros": 4
     },
     {
-      "type": "GARANTIA",
-      "interest_rate": 3
+      "tipoEmprestimo": "GARANTIA",
+      "taxaDeJuros": 3
     },
     {
-      "type": "CONSIGNADO",
-      "interest_rate": 2
+      "tipoEmprestimo": "CONSIGNADO",
+      "taxaDeJuros": 2
     }
   ]
 }
