@@ -31,7 +31,6 @@ class LoanServiceTest {
         DadosCadastroCliente dadosCadastroCliente = new DadosCadastroCliente(26, "275.484.389-23", "Murilo", 2000, "SP");
         Cliente cliente = new Cliente(dadosCadastroCliente);
 
-        loanService = new LoanService();
         List<DadosListLoans> emprestimos = loanService.verificarTiposEmprestimos(new DadosVerificacaoCliente(cliente));
 
         assertEquals(2, emprestimos.size());
@@ -46,7 +45,6 @@ class LoanServiceTest {
         DadosCadastroCliente dadosCadastroCliente = new DadosCadastroCliente(26, "275.484.389-23", "Murilo", 4000, "SP");
         Cliente cliente = new Cliente(dadosCadastroCliente);
 
-        loanService = new LoanService();
         List<DadosListLoans> emprestimos = loanService.verificarTiposEmprestimos(new DadosVerificacaoCliente(cliente));
 
         assertEquals(2, emprestimos.size());
@@ -60,7 +58,6 @@ class LoanServiceTest {
         DadosCadastroCliente dadosCadastroCliente = new DadosCadastroCliente(26, "275.484.389-23", "Murilo", 5000, "SP");
         Cliente cliente = new Cliente(dadosCadastroCliente);
 
-        loanService = new LoanService();
         List<DadosListLoans> emprestimos = loanService.verificarTiposEmprestimos(new DadosVerificacaoCliente(cliente));
 
 
@@ -77,7 +74,6 @@ class LoanServiceTest {
         DadosCadastroCliente dadosCadastroCliente = new DadosCadastroCliente(31, "275.484.389-23", "Murilo", 5000, "RJ");
         Cliente cliente = new Cliente(dadosCadastroCliente);
 
-        loanService = new LoanService();
         List<DadosListLoans> emprestimos = loanService.verificarTiposEmprestimos(new DadosVerificacaoCliente(cliente));
 
         assertEquals(1, emprestimos.size());
@@ -90,7 +86,6 @@ class LoanServiceTest {
         DadosCadastroCliente dadosCadastroCliente = new DadosCadastroCliente(28, "275.484.389-23", "Murilo", 4000, "RJ");
         Cliente cliente = new Cliente(dadosCadastroCliente);
 
-        loanService = new LoanService();
         List<DadosListLoans> emprestimos = loanService.verificarTiposEmprestimos(new DadosVerificacaoCliente(cliente));
 
         assertTrue(emprestimos.isEmpty());
